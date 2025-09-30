@@ -5,11 +5,13 @@ package usecase
 import "github.com/onlytesting-user/api-golab/model"
 
 type ProductUsecase struct {
-	// Repository
+	repository repository.ProductRepository
 }
 
-func NewProductUsecase() ProductUsecase {
-	return ProductUsecase{}
+func NewProductUsecase(repo repository.ProductRepository) ProductUsecase {
+	return ProductUsecase{
+		repository: repo,
+	}
 }
 
 func (pu *ProductUsecase) GetProducts() ([]model.Product, error) {

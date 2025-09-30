@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/onlytesting-user/api-golab/controller"
 	"github.com/onlytesting-user/api-golab/db"
+	"github.com/onlytesting-user/api-golab/repository"
 	"github.com/onlytesting-user/api-golab/usecase"
 )
 
@@ -17,7 +18,10 @@ func main() {
 
 	_ = dbConnection
 
-	ProductUseCase := usecase.NewProductUsecase()
+	// Repository Layer
+	ProductRepository := repository.NewProductRepository(dbConnection)
+	// Usecase Layer
+	ProductUseCase := usecase.NewProductUsecase(ProductRepository)
 	// Controller Layer
 	ProductController := controller.NewProductController(ProductUseCase)
 
