@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/onlytesting-user/api-golab/controller"
 	"github.com/onlytesting-user/api-golab/db"
+	"github.com/onlytesting-user/api-golab/usecase"
 )
 
 func main() {
@@ -16,8 +17,9 @@ func main() {
 
 	_ = dbConnection
 
+	ProductUseCase := usecase.NewProductUsecase()
 	// Controller Layer
-	ProductController := controller.NewProductController()
+	ProductController := controller.NewProductController(ProductUseCase)
 
 	server.GET("/health", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{

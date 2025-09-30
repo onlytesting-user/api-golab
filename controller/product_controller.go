@@ -7,14 +7,17 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/onlytesting-user/api-golab/model"
+	"github.com/onlytesting-user/api-golab/usecase"
 )
 
 type productController struct{
-	//usecase
+	productUseCase usecase.ProductUsecase
 }
 
-func NewProductController() productController {
-	return productController{}
+func NewProductController(usecase usecase.ProductUsecase) productController {
+	return productController{
+		productUseCase: usecase,
+	}
 }
 
 func (p *productController) GetProducts(ctx *gin.Context) {
