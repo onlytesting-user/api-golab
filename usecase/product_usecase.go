@@ -2,7 +2,10 @@
 // operations between controllers and repositories.
 package usecase
 
-import "github.com/onlytesting-user/api-golab/model"
+import (
+	"github.com/onlytesting-user/api-golab/model"
+	"github.com/onlytesting-user/api-golab/repository"
+)
 
 type ProductUsecase struct {
 	repository repository.ProductRepository
