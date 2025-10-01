@@ -16,8 +16,6 @@ func main() {
 		panic(err)
 	}
 
-	_ = dbConnection
-
 	// Repository Layer
 	ProductRepository := repository.NewProductRepository(dbConnection)
 	// Usecase Layer
