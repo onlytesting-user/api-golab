@@ -16,9 +16,9 @@ func ConnectDB() (*sql.DB, error) {
 	// Carrega variáveis do .env (não falha se o arquivo não existir)
 	_ = godotenv.Load()
 
-	port, err := strconv.Atoi(os.Getenv("DB_PORT"))
+	port, err := strconv.Atoi(os.Getenv("POSTGRES_PORT"))
 	if err != nil {
-		return nil, fmt.Errorf("invalid DB_PORT: %w", err)
+		return nil, fmt.Errorf("invalid POSTGRES_PORT: %w", err)
 	}
 
 	psqlInfo := fmt.Sprintf(
