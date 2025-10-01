@@ -14,7 +14,7 @@ import (
 
 func ConnectDB() (*sql.DB, error) {
 	// Carrega variáveis do .env (não falha se o arquivo não existir)
-	_ = godotenv.Load()
+	_ = godotenv.Load("../.env")
 
 	port, err := strconv.Atoi(os.Getenv("POSTGRES_PORT"))
 	if err != nil {
