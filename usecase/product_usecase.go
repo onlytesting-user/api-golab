@@ -18,5 +18,5 @@ func NewProductUsecase(repo repository.ProductRepository) ProductUsecase {
 }
 
 func (pu *ProductUsecase) GetProducts() ([]model.Product, error) {
-	return []model.Product{}, nil
+	return pu.repository.GetProducts()
 }
