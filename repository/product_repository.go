@@ -127,3 +127,27 @@ func (pr *ProductRepository) UpdateProduct(product model.Product) error {
 	return nil
 }
 
+func (pr *ProductRepository) DeleteProduct(id int) error {
+	query, err := pr.connection.Prepare("DELETE FROM product WHERE id = $1")
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	defer query.Close()
+
+	result, err := query.Exec(id)
+	if err != nil {
+		return err
+	}
+
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	if rowsAffected == 0 {
+		return fmt.Errorf("no product found with ID %d", id)
+	}
+
+	return nil
+}
