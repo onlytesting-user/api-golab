@@ -83,3 +83,34 @@ func (p *productController) GetProductByID(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, product)
 }
+
+func (p *productController) UpdateProduct(ctx *gin.Context) {
+	var product model.Product
+
+	// Captura o ID do path e converte para int
+	idParam := ctx.Param("productID")
+	productID, err := strconv.Atoi(idParam)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "invalid product ID"})
+		return
+	}
+	product.ID = productID
+
+	// Faz o bind do JSON recebido
+	err = ctx.BindJSON(&product)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Chama o usecase para atualizar
+	updatedProduct, err := p.productUseCase.UpdateProduct(product)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Retorna o produto atualizado
+	ctx.JSON(http.StatusOK, updatedProduct)
+}
+
