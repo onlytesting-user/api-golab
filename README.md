@@ -16,17 +16,16 @@ Esta API é baseada no vídeo **"Como criar uma REST API completa do zero com GO
     5. [PostgreSQL ou Docker](#5-postgresql-ou-docker)
     6. [pgAdmin ou DBeaver](#6-pgadmin-4-ou-dbeaver)
     7. [Postman](#7-postman)
-2. [Dica (Docker Compose)](#💡-dica)
-3. [Versões Estáveis](#versões-estáveis)
-4. [Extensões Recomendadas do VS Code](#extensões-recomendadas-do-vs-code)
-5. [Executando a Aplicação](#executando-a-aplicação)
-6. [Endpoints](#endpoints)
+2. [Versões Estáveis](#versões-estáveis)
+3. [Extensões Recomendadas do VS Code](#extensões-recomendadas-do-vs-code)
+4. [Executando a Aplicação](#executando-a-aplicação)
+5. [Endpoints](#endpoints)
     1. [Inserir um Novo Produto](#1-inserir-um-novo-produto)
     2. [Deletar um Produto por Id](#2-deletar-um-produto-por-id)
     3. [Obter todos os Produtos](#3-obter-todos-os-produtos)
     4. [Obter um Produto por Id](#4-obter-um-produto-por-id)
     5. [Atualizar um Produto por Id](#5-atualizar-um-produto-por-id)
-7. [Documentação Oficial](#documentação-oficial)
+6. [Documentação Oficial](#documentação-oficial)
 
 <br>
 
