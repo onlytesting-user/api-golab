@@ -155,7 +155,7 @@ Por ser um editor de código leve e modular, o VS Code depende de extensões par
 
 ---
 
-### [Go (by Go Team at Google)](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicodehttps://code.visualstudio.com/docs/languages/go)
+### [Go (by Go Team at Google)](https://marketplace.visualstudio.com/items?itemName=golang.Go)
 
 Extensão oficial mantida pelo time do Go.
 Ela adiciona suporte nativo à linguagem, permitindo:
